@@ -1,8 +1,8 @@
 <?php
 $host = 'db';
 $user = 'root';
-$passwd = '';
-$database = 'exercise';
+$passwd = '123';
+$database = 'db';
 $connect = mysqli_connect($host, $user, $passwd, $database);
 $table_name = 'user';
 

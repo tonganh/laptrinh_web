@@ -11,11 +11,18 @@ services:
     image: php:fpm
     volumes:
       - ./app:/app
+
   db:
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: asd
+      MYSQL_DATABASE: 'db'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: '123'
     ports:
-      - "8001:8080"
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    # expose:
+    #   # Opens port 3306 on the container
+    #   - '3306'
+    #   # Where our data will be persisted
