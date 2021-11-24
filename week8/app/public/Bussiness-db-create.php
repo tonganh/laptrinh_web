@@ -1,13 +1,13 @@
 <?php
-    $host = 'localhost';
-    $user = 'root';
-    $passwd = '';
-    $database = 'bussiness';
-    $connect = mysqli_connect($host, $user, $passwd, $database);
-    $table_name = 'bussinessTable';
+$host = 'db';
+$user = 'root';
+$passwd = 'root';
+$database = 'bussiness';
+$connect = mysqli_connect($host, $user, $passwd, $database);
+$table_name = 'bussinessTable';
 
 
-    $SQLcmd = "CREATE TABLE $table_name(
+$SQLcmd = "CREATE TABLE $table_name(
         BussinessName VARCHAR(100) PRIMARY KEY,
         Address VARCHAR(100),
         City VARCHAR(100),
@@ -16,12 +16,12 @@
         Category VARCHAR(500)
     )";
 
-    print "The Query is <i>$SQLcmd</i><br>";
-    if ($connect->query($SQLcmd)) {
-        print "Create $database was successful!</font>";
-    } else {
-        print "Create $database failed!</font>";
-    }
+print "The Query is <i>$SQLcmd</i><br>";
+if ($connect->query($SQLcmd)) {
+    print "Create $database was successful!</font>";
+} else {
+    print "Create $database failed!</font>";
+}
 
 
-    mysqli_close($connect);
+mysqli_close($connect);
