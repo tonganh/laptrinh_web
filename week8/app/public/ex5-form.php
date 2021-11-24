@@ -18,12 +18,12 @@
                 <td style="background: #555555;color: white">Description</td>
             </tr>
             <?php
-            $host = 'localhost';
+            $host = 'db';
             $user = 'root';
-            $passwd = '123';
+            $passwd = 'root';
             $database = 'db';
             $connect = mysqli_connect($host, $user, $passwd, $database);
-            $table_name = 'category';
+            $table_name = 'Category';
             $SelectQuery = "Select * from $table_name";
             if ($data = $connect->query($SelectQuery)) {
                 print "Get data from $database was successful!</font>";

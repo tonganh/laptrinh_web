@@ -6,9 +6,9 @@
 
 <body>
     <?php
-    $host = 'localhost';
+    $host = 'db';
     $user = 'root';
-    $passwd = '123';
+    $passwd = 'root';
     $database = 'db';
     $connect = mysqli_connect($host, $user, $passwd, $database);
     $table_name = 'Category';
