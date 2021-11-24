@@ -1,10 +1,14 @@
 <html>
-<head><title>Insert Results</title></head>
+
+<head>
+    <title>Insert Results</title>
+</head>
+
 <body>
-<?php
-    $host = 'localhost';
+    <?php
+    $host = 'db';
     $user = 'root';
-    $passwd = '';
+    $passwd = 'root';
     $database = 'bussiness';
     $connect = mysqli_connect($host, $user, $passwd, $database);
     $table_name = 'bussinessTable';
@@ -28,5 +32,6 @@
 
 
     mysqli_close($connect);
-?></body>
+    ?></body>
+
 </html>

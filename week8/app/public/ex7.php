@@ -1,24 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <h1>Bussiness Listings</h1>
-    <div style="display: flex;width: 80%">
-        <div style="width: 50%">
-            <label for="Category">Click on a category to find bussiness listings</label>
-            <br>
-            <select name="Category" id="categories" multiple size="3">
-                <?php
-                    $host = 'localhost';
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <h1>Bussiness Listings</h1>
+        <div style="display: flex;width: 80%">
+            <div style="width: 50%">
+                <label for="Category">Click on a category to find bussiness listings</label>
+                <br>
+                <select name="Category" id="categories" multiple size="3">
+                    <?php
+                    $host = 'db';
                     $user = 'root';
-                    $passwd = '';
+                    $passwd = 'root';
                     $database = 'mydatabase2';
                     $connect = mysqli_connect($host, $user, $passwd, $database);
                     $table_name = 'Category';
@@ -33,20 +34,20 @@
                             print "<option value='$field'>$field </option> ";
                         }
                     }
-                ?>
-            </select>
-            <input type="submit" value="Find">
-            <input type="reset" value="reset">
-        </div>
+                    ?>
+                </select>
+                <input type="submit" value="Find">
+                <input type="reset" value="reset">
+            </div>
 
 
-        <div style="width: 50%">
-            <table border="1">
-                <?php
+            <div style="width: 50%">
+                <table border="1">
+                    <?php
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $host = 'localhost';
+                        $host = 'db';
                         $user = 'root';
-                        $passwd = '';
+                        $passwd = 'root';
                         $database = 'bussiness';
                         $connect = mysqli_connect($host, $user, $passwd, $database);
                         $table_name = 'bussinessTable';
@@ -65,16 +66,15 @@
                                 print " <td>$field</td>";
                             }
                             echo "</tr>";
-
                         }
-
                     }
-                ?>
+                    ?>
 
-            </table>
+                </table>
+            </div>
         </div>
-    </div>
 
-</form>
+    </form>
 </body>
+
 </html>
